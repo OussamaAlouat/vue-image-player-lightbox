@@ -64,17 +64,12 @@
 <script>
 import PhotoSwipe from 'photoswipe';
 import PhotoSwipeUIDefault from 'photoswipe/dist/photoswipe-ui-default';
-import 'photoswipe/dist/photoswipe.css';
-import 'photoswipe/dist/default-skin/default-skin.css';
 
 export default {
   props: {
     items: {
       type: Array,
       required: true,
-    },
-    isOpen: {
-      type: Boolean,
     },
   },
   data() {
@@ -112,7 +107,6 @@ export default {
 };
 </script>
 <style>
-.ligth {
-  z-index: 1000100000000000000000000000000;
-}
+@import '~photoswipe/dist/photoswipe.css';
+@import '~photoswipe/dist/default-skin/default-skin.css';
 </style>
