@@ -1,17 +1,35 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <light-box
+      :items="items"
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import LightBox from '@/components/LightBox.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
+    LightBox,
+  },
+  data() {
+    return {
+      items: [
+        {
+          src: 'https://placekitten.com/600/400',
+          w: 600,
+          h: 400,
+        },
+        {
+          src: 'https://placekitten.com/1200/900',
+          w: 1200,
+          h: 900,
+        },
+      ],
+    };
   },
 };
 </script>
