@@ -1,12 +1,26 @@
 import { shallowMount } from '@vue/test-utils';
-import HelloWorld from '@/components/HelloWorld.vue';
+import LightBox from '@/components/LightBox.vue';
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message';
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg },
+describe('LightBox.vue', () => {
+  it('renders', () => {
+    const items = [
+      {
+        src: 'https://placekitten.com/600/400',
+        w: 600,
+        h: 400,
+      },
+      {
+        src: 'https://placekitten.com/1200/900',
+        w: 1200,
+        h: 900,
+      },
+    ];
+
+    const wrapper = shallowMount(LightBox, {
+      props: {
+        items,
+      },
     });
-    expect(wrapper.text()).toMatch(msg);
+    expect(wrapper.isVueInstance()).toBeTruthy();
   });
 });
